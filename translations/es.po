@@ -1,0 +1,107 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  theme-settings.php: n/a
+#  qelluchaska.info: n/a
+#  scripts/user.script.js: n/a
+#  templates/node--tour.tpl.php: n/a
+#  templates/node--page.tpl.php: n/a
+#  templates/page--front.tpl.php: n/a
+#  templates/page.tpl.php: n/a
+#  templates/views/views-view-fields--noticias-de-machu-picchu--block.tpl.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2012-07-14 10:52-0500\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: theme-settings.php:29
+msgid "Open Graph Settings"
+msgstr "Configuración de Open Graph"
+
+#: theme-settings.php:36
+msgid "OpenGraph URL"
+msgstr "OpenGraph URL"
+
+#: theme-settings.php:41
+msgid "OpenGraph Title and Site Name"
+msgstr "OpenGraph título y nombre del sitio"
+
+#: theme-settings.php:46
+msgid "OpenGraph Image"
+msgstr "OpenGraph Imagen"
+
+#: theme-settings.php:52
+msgid "OpenGraph Description"
+msgstr "OpenGraph Descripción"
+
+#: theme-settings.php:57
+msgid "Facebook AppID"
+msgstr "Facebook AppID"
+
+#: theme-settings.php:59
+msgid "You can found this on "
+msgstr "Lo puedes encontrar en "
+
+#: qelluchaska.info:0
+msgid "Qellu Chaska"
+msgstr "Qellu Chaska"
+
+#: scripts/user.script.js:0
+msgid "CellPhone number"
+msgstr "Número de móvil"
+
+#: scripts/user.script.js:0
+msgid "Only numbers"
+msgstr "Sólo números"
+
+#: scripts/user.script.js:0
+msgid "Message"
+msgstr "Mensaje"
+
+#: scripts/user.script.js:0
+msgid "Message sent"
+msgstr "Mensaje enviado"
+
+#: scripts/user.script.js:0 templates/node--tour.tpl.php:101
+msgid "Chat now!"
+msgstr "¡Chatea ahora!"
+
+#: templates/node--page.tpl.php:100
+msgid "Share:"
+msgstr "Comparte:"
+
+#: templates/node--page.tpl.php:113 templates/node--tour.tpl.php:119
+msgid "Also available in:"
+msgstr "Disponible también en:"
+
+#: templates/node--tour.tpl.php:100
+msgid "Book now!"
+msgstr "¿Deseas reservar?"
+
+#: templates/node--tour.tpl.php:102
+msgid "Call us!"
+msgstr "¡Llámanos ahora!"
+
+#: templates/node--tour.tpl.php:105
+msgid "Share this tour:"
+msgstr "Comparte el tour:"
+
+#: templates/page--front.tpl.php:81;125 templates/page.tpl.php:81;131
+msgid "Ask and book tours 24/7:"
+msgstr "Reserve y consulte las 24 horas:"
+
+#: templates/views/views-view-fields--noticias-de-machu-picchu--block.tpl.php:36
+msgid "Read more..."
+msgstr "Leer más..."
+
