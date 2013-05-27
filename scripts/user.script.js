@@ -31,7 +31,8 @@ var paramsSkype = 'location=0,status=0,scrollbars=0,width=450,height=350';
 
 	Drupal.behaviors.qelluchaska = {
     attach: function (context) {
-      //Tour prices tables
+
+      //Tour prices tables.
       $.ajax({
         url: "/sites/all/themes/qelluchaska/get.php",
         type:"GET",
@@ -46,12 +47,12 @@ var paramsSkype = 'location=0,status=0,scrollbars=0,width=450,height=350';
         }
       })	
 
-      // Popup
+      // Popup.
       $('.live-chat', context).popup(paramsChat);
       $('.live-skype', context).popup(paramsSkype);
 
 
-      // Hide Blocks
+      // Hide Blocks.
       $('#welcome .hide', context).click(function() {
         $('#welcome', context).hide('slow');
         return false;
@@ -71,34 +72,6 @@ var paramsSkype = 'location=0,status=0,scrollbars=0,width=450,height=350';
 
       sharebarHandler();
       
-      // WhatsApp.
-      $('#wap', context).click(function () {
-        bu = $(this, context);
-        inHT = '<div id="wac"><label>' + 
-          Drupal.t('CellPhone Number') +
-          ':</label> <input type="number" name="waid" id="waid" size="10" placeholder="' +
-          Drupal.t('Only numbers') + 
-          '" />';
-        inHT += '<label>'+ Drupal.t('Message') +':</label> <input type="text" name="wamsg" id="wamsg" size="15" /></div>';
-        but = $('<button id="wasend"></button>')
-        .click(function () {
-          $.ajax({
-            url: "/sites/all/themes/qelluchaska/wa/wa.php",
-            type: "GET",
-            data: { num: $('#waid').val(), msg: $('#wamsg').val() },
-            success: function() {
-              $('#wac').html('<p>'+ Drupal.t('Message sent') +'</p>');
-              $('#wasend').remove();
-            } 
-          })
-        })
-        .text(Drupal.t('Chat now!'));
-        bu.parent().append($(inHT));
-        $('#wac').parent().append(but);
-        bu.remove();
-        return false;
-      });
-
       // Premio.
       var header_inner = $('#header-inner');
       var banner = $('<img src="http://media.perunoticias.net/images/logos/empresaperuana.png" alt="Premio mejor empresa de Viajes y Turismo">');
@@ -110,6 +83,56 @@ var paramsSkype = 'location=0,status=0,scrollbars=0,width=450,height=350';
       div_banner.click(function() {
         location.href = 'http://www.machupicchu.biz/mejor-agencia-de-viajes-y-turismo-en-peru-machu-picchu-travel';
       });
+
+      // Carrito de compras.
+      var form = $('.add-to-cart form', context);
+      var select = form.find('select');
+      var options = select.find('option');
+      var template = $('<ul id="cart-options"></ul>');
+      var template_item = $('<li data-opt="{value}">{name}</li>');
+      var template_button = $('<button type="button" id="do-payment"></button>');
+      var text_to_replace = 'Adelanto, +';
+
+      template_button.text(Drupal.t('Make Payment'));
+
+      template_button.click(function(e) {
+        //e.preventDefault();
+        form.submit();
+      });
+
+      template.appendTo('.bar-visa');
+      template_button.appendTo('.bar-visa');
+
+      form.css({display: 'none'});
+
+      options.each(function(i){
+        _this = $(this);
+        if (_this.val() != '') {
+          var item = template_item.clone();
+          item.data('opt', _this.val());
+          item.html(_this.html().replace(text_to_replace, ''));
+          item.click(function(e) {
+            // Form handler.
+            select.find('option').removeAttr('selected');
+            select.find('option[value="'+ item.data('opt') +'"]').attr('selected', 'selected');
+
+            // Styles handler.
+            template.find('li').removeClass('selected');
+            item.addClass('selected').slideDown();
+          });
+          item.appendTo(template);
+        }
+      });
+
+      initPayment = function() {
+        select.find('option').removeAttr('selected');
+        select.find('option:eq(3)').attr('selected', 'selected');
+
+        template.find('li:eq(2)').addClass('selected');
+      }
+
+      initPayment();
+
     }
   }
 

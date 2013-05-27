@@ -76,7 +76,6 @@ stylesheets[print][]      = css/print.css
 ;scripts[] = js/script.js
 scripts[] = scripts/user.script.js
 scripts[] = scripts/adapt.js
-scripts[] = scripts/cart.js
 
 
 
