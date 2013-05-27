@@ -12,8 +12,8 @@
 ; page at admin/appearance.
 
 screenshot  = screenshot.png
-name        = Qellu Cart
-description =  Una estrella amarilla para la suerte  (Soporte para Carrito)
+name        = Qellu Chaska
+description =  Una estrella amarilla para la suerte 
 
 
 ; This theme is compatible with Drupal 7 core. And it is a sub-theme of Zen.

@@ -96,6 +96,9 @@
     <?php print render($title_suffix); ?>
     <div class="content"<?php print $content_attributes; ?>>
       <section id="tour-bar">
+        <div class="bar-visa">
+        <h5><?php print t('Pay with'); ?> <img src="/sites/all/modules/ubercart/payment/uc_credit/images/visa.gif" width="37" height="21" alt="<?php t('Pay with VISA'); ?>" /></h5>
+        </div>
       	<div class="bar-reserva">
         	<h5><?php print t('Book now!'); ?></h5>
             <a href="/chat/" class="button action live-chat"><?php print t('Chat now!'); ?></a>
