@@ -5,31 +5,31 @@ var paramsSkype = 'location=0,status=0,scrollbars=0,width=450,height=350';
   
   // Popup Plugin
   $.fn.popup = function(params, href) {
-		href = (typeof href == 'undefined') ? $(this).attr('href') : href;
-		function clickHandler(e) {
-			if (e.ctrlKey || e.shiftKey || e.metaKey)
-				return;
-			var w = window.open(href, '_blank', params);
-			if (w && !w.closed) {
-				w.focus();
-				e.preventDefault();
-			}
-		}
-		this
-			.bind('click', clickHandler);
-		return this;
-	}
+    href = (typeof href == 'undefined') ? $(this).attr('href') : href;
+    function clickHandler(e) {
+      if (e.ctrlKey || e.shiftKey || e.metaKey)
+        return;
+      var w = window.open(href, '_blank', params);
+      if (w && !w.closed) {
+        w.focus();
+        e.preventDefault();
+      }
+    }
+    this
+      .bind('click', clickHandler);
+    return this;
+  }
 
-	var sharebarHandler = function() {
-		ventana = $(window).width();
-		// co es el tamanio de el espacio a cada lado del centro y se le resta 83 por el tamanio del sharebar
-		// 83 es el tamanio de Share bar y 960 es el tamanio de #main
-		co = parseInt((ventana-960)/2) - 91;
-		// Posicionamos el Sharebar
-		$('#sharebar').css('left', co);
-	}
+  var sharebarHandler = function() {
+    ventana = $(window).width();
+    // co es el tamanio de el espacio a cada lado del centro y se le resta 83 por el tamanio del sharebar
+    // 83 es el tamanio de Share bar y 960 es el tamanio de #main
+    co = parseInt((ventana-960)/2) - 91;
+    // Posicionamos el Sharebar
+    $('#sharebar').css('left', co);
+  }
 
-	Drupal.behaviors.qelluchaska = {
+  Drupal.behaviors.qelluchaska = {
     attach: function (context) {
 
       //Tour prices tables.
@@ -45,7 +45,7 @@ var paramsSkype = 'location=0,status=0,scrollbars=0,width=450,height=350';
             $(this).text("USD "+price).next("td").text("S/."+parseInt(price*cambio)).css("font-size","11px"); 
           });
         }
-      })	
+      })  
 
       // Popup.
       $('.live-chat', context).popup(paramsChat);
@@ -136,7 +136,7 @@ var paramsSkype = 'location=0,status=0,scrollbars=0,width=450,height=350';
     }
   }
 
-	$(window).resize(function() {
+  $(window).resize(function() {
     sharebarHandler();
   });
 
