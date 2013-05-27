@@ -1,5 +1,5 @@
-INSTRUCCIONES PARA USAR EL THEME QELLUCHASKA
-=============================================
+# INSTRUCCIONES PARA USAR EL THEME QELLUCHASKA
+
 1. Módulos para deshabilitar
    a. overlay
    b. comment

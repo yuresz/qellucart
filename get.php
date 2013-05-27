@@ -1,4 +1,7 @@
 <?php
+/**
+  * Simple script para obtener el cambio de dolar
+  */
 $cambio = file_get_contents('http://media.perunoticias.net/html/prices/tours/cambio.html');
 die ($cambio);
 /*
